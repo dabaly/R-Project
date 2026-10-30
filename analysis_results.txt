@@ -1,0 +1,57 @@
+Descriptive statistics
+      year      maize_area_million_ha maize_yield_t_ha annual_rainfall_mm annual_mean_temp_c
+ Min.   :2010   Min.   :2.010         Min.   :1.430    Min.   : 627.2     Min.   :24.84     
+ 1st Qu.:2014   1st Qu.:2.115         1st Qu.:1.545    1st Qu.: 723.4     1st Qu.:25.11     
+ Median :2017   Median :2.140         Median :1.670    Median : 809.2     Median :25.19     
+ Mean   :2017   Mean   :2.193         Mean   :1.646    Mean   : 848.4     Mean   :25.19     
+ 3rd Qu.:2020   3rd Qu.:2.285         3rd Qu.:1.750    3rd Qu.: 981.2     3rd Qu.:25.27     
+ Max.   :2024   Max.   :2.430         Max.   :1.820    Max.   :1146.5     Max.   :25.55     
+
+Rainfall and maize yield correlation
+
+	Pearson's product-moment correlation
+
+data:  kenya$annual_rainfall_mm and kenya$maize_yield_t_ha
+t = -0.91498, df = 13, p-value = 0.3769
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.6733870  0.3046807
+sample estimates:
+       cor 
+-0.2459727 
+
+
+Temperature and maize yield correlation
+
+	Pearson's product-moment correlation
+
+data:  kenya$annual_mean_temp_c and kenya$maize_yield_t_ha
+t = -1.0217, df = 13, p-value = 0.3256
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.6887142  0.2785230
+sample estimates:
+       cor 
+-0.2726392 
+
+
+Multiple regression model
+
+Call:
+lm(formula = maize_yield_t_ha ~ annual_rainfall_mm + annual_mean_temp_c, 
+    data = kenya)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.19220 -0.08946  0.01439  0.06951  0.20197 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(>|t|)
+(Intercept)         5.6836774  4.5603818   1.246    0.236
+annual_rainfall_mm -0.0001578  0.0002156  -0.732    0.478
+annual_mean_temp_c -0.1549860  0.1822533  -0.850    0.412
+
+Residual standard error: 0.126 on 12 degrees of freedom
+Multiple R-squared:  0.1139,	Adjusted R-squared:  -0.03378 
+F-statistic: 0.7713 on 2 and 12 DF,  p-value: 0.4841
+
